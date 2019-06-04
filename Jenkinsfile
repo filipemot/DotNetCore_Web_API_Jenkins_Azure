@@ -35,8 +35,6 @@ pipeline {
 			steps {
 					azureWebAppPublish 
 						resourceGroup: params.res_group, appName: params.customersapiapp, sourceDirectory: "src/CustomersAPI/bin/Release/netcoreapp2.2/publish/"
-					azureWebAppPublish 
-						resourceGroup: params.res_group, appName: params.customersmvcapp, sourceDirectory: "src/CustomersMVC/bin/Release/netcoreapp2.2/publish/"
 			}
 		}
     }
