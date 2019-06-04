@@ -9,7 +9,7 @@ pipeline {
 	  
 	  stage('Checkout') {
 		steps {
-			git credentialsId: 'admin', url: 'https://github.com/filipemot/dotnetapi', branch: 'master'
+			git credentialsId: 'admin', url: 'https://github.com/filipemot/DotNetCore_Web_API_Jenkins_Azure', branch: 'master'
 		}
 	  }
 	  
