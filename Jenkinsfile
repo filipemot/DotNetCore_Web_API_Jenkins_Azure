@@ -33,9 +33,9 @@ pipeline {
 		
 		stage('deploy') {
 			steps {
-					azureWebAppPublish azureCredentialsId: params.azure_cred_id,
+					azureWebAppPublish 
 						resourceGroup: params.res_group, appName: params.customersapiapp, sourceDirectory: "src/CustomersAPI/bin/Release/netcoreapp2.2/publish/"
-					azureWebAppPublish azureCredentialsId: params.azure_cred_id,
+					azureWebAppPublish 
 						resourceGroup: params.res_group, appName: params.customersmvcapp, sourceDirectory: "src/CustomersMVC/bin/Release/netcoreapp2.2/publish/"
 			}
 		}
