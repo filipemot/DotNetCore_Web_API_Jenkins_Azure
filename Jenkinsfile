@@ -25,15 +25,18 @@ pipeline {
 			}
 		}
 		
-		stage('Build') {
+		stage('build and publish') {
 			steps {
-				sh(script:"dotnet build --configuration Release",returnStdout:false)
+				sh(script: "dotnet publish --configuration Release ", returnStdout: true)
 			}
 		}
 		
-		stage('Pack') {
+		stage('deploy') {
 			steps {
-				sh(script:"dotnet pack --no-build --output nupkgs",returnStdout:false)
+					azureWebAppPublish azureCredentialsId: params.azure_cred_id,
+						resourceGroup: params.res_group, appName: params.customersapiapp, sourceDirectory: "src/CustomersAPI/bin/Release/netcoreapp2.2/publish/"
+					azureWebAppPublish azureCredentialsId: params.azure_cred_id,
+						resourceGroup: params.res_group, appName: params.customersmvcapp, sourceDirectory: "src/CustomersMVC/bin/Release/netcoreapp2.2/publish/"
 			}
 		}
     }
