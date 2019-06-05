@@ -33,7 +33,7 @@ pipeline {
 		
 		stage('deploy') {
 			steps {
-				azureWebAppPublish azureCredentialsId: params.azure_cred_id, publishType: "file",filePath: "**/*.*",
+				azureWebAppPublish azureCredentialsId: params.azure_cred_id,
 						resourceGroup: params.res_group, appName: params.customersapiapp, sourceDirectory: 'bin/Release/netcoreapp2.2/publish/'
 			}
 		}
