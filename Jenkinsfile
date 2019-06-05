@@ -7,12 +7,46 @@ pipeline {
 		}
 	  }
 	  
-
-		stage('deploy') {
+	  docker.image('microsoft/dotnet:sdk').inside('') {
+	  
+		  stage('Checkout') {
 			steps {
-				azureWebAppPublish azureCredentialsId: params.azure_cred_id, dockerImageTag:"filipemot/app", dockerRegistryEndpoint:[credentialsId:'acr',url:'dotnetcorefilipemot'],
-						resourceGroup: params.res_group, appName: params.customersapiapp, publishType: 'docker'
+				git credentialsId: 'admin', url: 'https://github.com/filipemot/DotNetCore_Web_API_Jenkins_Azure', branch: 'master'
+			}
+		  }
+		  
+			stage('Restore PACKAGES') {
+				steps {
+					sh(script:"dotnet restore",returnStdout:false)
+				}
+			}
+			
+			stage('Clean') {
+				steps {
+					sh(script:"dotnet clean",returnStdout:false)
+				}
+			}
+			
+			stage('build and publish') {
+				steps {
+					sh(script: "dotnet publish --configuration Release ", returnStdout: true)
+				}
+			}
+			
+			stage('deploy') {
+				steps {
+					azureWebAppPublish azureCredentialsId: params.azure_cred_id, dockerImageTag:"filipemot/app", dockerRegistryEndpoint:[credentialsId: 'dotnetcorefilipemot', url:'dotnetcorefilipemot.azurecr.io'],
+							resourceGroup: params.res_group, appName: params.customersapiapp
+				}
 			}
 		}
-    }
+    
+		def dockerImage
+		def dockerTag = buildTimestamp()
+
+		stage('build docker') {
+			sh "cp bin/Release/netcoreapp2.2/publish/'"
+			dockerImage = docker.build('filipemot/app:' + dockerTag, 'build_temp')
+		}
+	}
 }
