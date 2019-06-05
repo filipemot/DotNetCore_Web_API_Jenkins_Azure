@@ -1,7 +1,7 @@
 pipeline {
     agent any
 	environment {
-		dockerImage = "filipemot/app:" + buildTimestamp();
+		dockerImage = "filipemot/app-${BUILD_TIMESTAMP}";
 		pub = "bin/Release/netcoreapp2.2/publish/";
 	}
     stages {
