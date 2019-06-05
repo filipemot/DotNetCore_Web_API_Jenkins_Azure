@@ -15,32 +15,31 @@ pipeline {
 			}
 		  }
 		  
-			stage('Restore PACKAGES') {
-				steps {
-					sh(script:"dotnet restore",returnStdout:false)
-				}
+		stage('Restore PACKAGES') {
+			steps {
+				sh(script:"dotnet restore",returnStdout:false)
 			}
-			
-			stage('Clean') {
-				steps {
-					sh(script:"dotnet clean",returnStdout:false)
-				}
+		}
+		
+		stage('Clean') {
+			steps {
+				sh(script:"dotnet clean",returnStdout:false)
 			}
-			
-			stage('build and publish') {
-				steps {
-					sh(script: "dotnet publish --configuration Release ", returnStdout: true)
-				}
+		}
+		
+		stage('build and publish') {
+			steps {
+				sh(script: "dotnet publish --configuration Release ", returnStdout: true)
 			}
+		}
 		
     
 
 		stage('build docker') {
 			steps {
-					sh(script: "docker.build('filipemot/app:' + buildTimestamp(), 'build_temp')", returnStdout: true);
-					
-				}
+				docker.build('filipemot/app:' + buildTimestamp(), 'bin/Release/netcoreapp2.2/publish/')					
 			}
+		}
 	
 	}
 }
