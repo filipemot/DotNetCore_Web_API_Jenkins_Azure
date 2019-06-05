@@ -34,12 +34,12 @@ pipeline {
 			}
 		}
     
-		def dockerImage
-		def dockerTag = buildTimestamp()
 
 		stage('build docker') {
-			docker.image('microsoft/dotnet:aspnetcore-runtime').inside('') {
-				dockerImage = docker.build('filipemot/app:' + dockerTag, 'build_temp')
+			steps {
+				docker.image('microsoft/dotnet:aspnetcore-runtime').inside('') {
+					dockerImage = docker.build('filipemot/app:' + buildTimestamp(), 'build_temp')
+				}
 			}
 		}
 	}
