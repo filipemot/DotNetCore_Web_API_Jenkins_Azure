@@ -7,7 +7,7 @@ pipeline {
 		}
 	  }
 	  
-	  docker.image('microsoft/dotnet:sdk').inside('') {
+	  docker.image('microsoft/dotnet:sdk') {
 	  
 		  stage('Checkout') {
 			steps {
@@ -37,7 +37,7 @@ pipeline {
 
 		stage('build docker') {
 			steps {
-				docker.image('microsoft/dotnet:aspnetcore-runtime').inside('') {
+				docker.image('microsoft/dotnet:aspnetcore-runtime') {
 					dockerImage = docker.build('filipemot/app:' + buildTimestamp(), 'build_temp')
 				}
 			}
