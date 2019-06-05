@@ -32,21 +32,16 @@ pipeline {
 					sh(script: "dotnet publish --configuration Release ", returnStdout: true)
 				}
 			}
-			
-			stage('deploy') {
-				steps {
-					azureWebAppPublish azureCredentialsId: params.azure_cred_id, dockerImageTag:"filipemot/app", dockerRegistryEndpoint:[credentialsId: 'dotnetcorefilipemot', url:'dotnetcorefilipemot.azurecr.io'],
-							resourceGroup: params.res_group, appName: params.customersapiapp
-				}
-			}
 		}
     
 		def dockerImage
 		def dockerTag = buildTimestamp()
 
 		stage('build docker') {
-			sh "cp bin/Release/netcoreapp2.2/publish/'"
-			dockerImage = docker.build('filipemot/app:' + dockerTag, 'build_temp')
+			docker.image('microsoft/dotnet:aspnetcore-runtime').inside('') {
+				sh "cp bin/Release/netcoreapp2.2/publish/'"
+				dockerImage = docker.build('filipemot/app:' + dockerTag, 'build_temp')
+			}
 		}
 	}
 }
