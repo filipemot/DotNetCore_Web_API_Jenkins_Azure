@@ -41,7 +41,7 @@ pipeline {
 
 		stage('build docker') {
 			steps {
-				sh "docker.build(dockerImage,pub)"					
+				sh (script:"docker.build(dockerImage,pub)",returnStdout:false)				
 			}
 		}
 	
