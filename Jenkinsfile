@@ -33,7 +33,7 @@ pipeline {
 		
 		stage('deploy') {
 			steps {
-				azureWebAppPublish azureCredentialsId: params.azure_cred_id,
+				azureWebAppPublish azureCredentialsId: params.azure_cred_id, filePath: 'bin/Release/netcoreapp2.2/publish/DotNetCore_Web_API_Jenkins_Azure.dll'
 						resourceGroup: params.res_group, appName: params.customersapiapp, sourceDirectory: 'bin/Release/netcoreapp2.2/publish/'
 			}
 		}
