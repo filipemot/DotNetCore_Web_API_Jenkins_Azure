@@ -10,7 +10,7 @@ pipeline {
 
 		stage('deploy') {
 			steps {
-				azureWebAppPublish azureCredentialsId: params.azure_cred_id, dockerImageTag:"filipemot/app", dockerRegistryEndpoint:[credentialsId:"acr",url:"https://dotnetcorefilipemot.azurecr.io"],
+				azureWebAppPublish azureCredentialsId: params.azure_cred_id, dockerImageTag:"filipemot/app", dockerRegistryEndpoint:[credentialsId:"acr",url:"dotnetcorefilipemot.azurecr.io"],
 						resourceGroup: params.res_group, appName: params.customersapiapp, publishType: 'docker'
 			}
 		}
