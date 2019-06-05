@@ -1,7 +1,7 @@
 pipeline {
     agent any
-	def dockerImage = 'filipemot/app:' + buildTimestamp();
-	def pub = 'bin/Release/netcoreapp2.2/publish/';
+	agent {dockerImage 'filipemot/app:' + buildTimestamp()}
+	agent {pub 'bin/Release/netcoreapp2.2/publish/'}
     stages {
 	  stage('DotNetApi') {
 		steps {
@@ -31,6 +31,7 @@ pipeline {
 		
 		stage('build and publish') {
 			steps {
+			
 				sh(script: "dotnet publish --configuration Release ", returnStdout: true)
 			}
 		}
