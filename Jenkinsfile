@@ -33,8 +33,8 @@ pipeline {
 		
 		stage('deploy') {
 			steps {
-					sh(script: "azureWebAppPublish azureCredentialsId: params.azure_cred_id,
-						resourceGroup: params.res_group, appName: params.customersapiapp, sourceDirectory: "src/CustomersAPI/bin/Release/netcoreapp2.1/publish/"", returnStdout: true)
+					azureWebAppPublish azureCredentialsId: params.azure_cred_id,
+						resourceGroup: params.res_group, appName: params.customersapiapp, sourceDirectory: "src/CustomersAPI/bin/Release/netcoreapp2.1/publish/"
 			}
 		}
     }
