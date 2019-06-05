@@ -38,7 +38,7 @@ pipeline {
 		stage('build docker') {
 			steps {
 				def dockerImage = 'filipemot/app:' + buildTimestamp();
-				def pub = ''bin/Release/netcoreapp2.2/publish/';
+				def pub = 'bin/Release/netcoreapp2.2/publish/';
 				
 				sh "docker.build(dockerImage,pub)"					
 			}
