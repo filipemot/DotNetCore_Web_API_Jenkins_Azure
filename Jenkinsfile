@@ -41,7 +41,7 @@ pipeline {
 
 		stage('build docker') {
 			steps {
-				sh (script:"docker build -t dockerImage pub",returnStdout:false)				
+				sh (script:"docker build -t filipemot/jenkins_dotnet_core .",returnStdout:false)				
 			}
 		}
 	
