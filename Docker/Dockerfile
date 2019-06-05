@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:lts
+FROM jenkins/jenkins:lts-jdk11 
  # Switch to root to install .NET Core SDK
 USER root
 
