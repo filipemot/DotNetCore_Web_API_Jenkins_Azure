@@ -7,7 +7,7 @@ pipeline {
 		}
 	  }
 	  
-	  docker.image('microsoft/dotnet:sdk') {
+
 	  
 		  stage('Checkout') {
 			steps {
@@ -32,13 +32,13 @@ pipeline {
 					sh(script: "dotnet publish --configuration Release ", returnStdout: true)
 				}
 			}
-		}
+		
     
 
 		stage('build docker') {
 			steps {
-				docker.image('microsoft/dotnet:aspnetcore-runtime') {
-					dockerImage = docker.build('filipemot/app:' + buildTimestamp(), 'build_temp')
+					sh(script: "docker.build('filipemot/app:' + buildTimestamp(), 'build_temp')", returnStdout: true);
+					
 				}
 			}
 		}
