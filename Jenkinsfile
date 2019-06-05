@@ -33,8 +33,8 @@ pipeline {
 		
 		stage('deploy') {
 			steps {
-				azureWebAppPublish azureCredentialsId: params.azure_cred_id, filePath: 'bin/Release/netcoreapp2.2/publish/*.dll',
-						resourceGroup: params.res_group, appName: params.customersapiapp, sourceDirectory: 'bin/Release/netcoreapp2.2/publish/'
+				azureWebAppPublish azureCredentialsId: params.azure_cred_id, dockerImageTag:'filipemot/app',
+						resourceGroup: params.res_group, appName: params.customersapiapp, dockerRegistryEndpoint: 'dotnetcorefilipemot.azurecr.io'
 			}
 		}
     }
