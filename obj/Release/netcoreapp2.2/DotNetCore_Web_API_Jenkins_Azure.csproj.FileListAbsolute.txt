@@ -1,0 +1,14 @@
+E:\Bibliotecas\Documents\Documents\Filipe\Demos\DotNetCore_Web_API_Jenkins_Azure\bin\Release\netcoreapp2.2\DotNetCore_Web_API_Jenkins_Azure.deps.json
+E:\Bibliotecas\Documents\Documents\Filipe\Demos\DotNetCore_Web_API_Jenkins_Azure\bin\Release\netcoreapp2.2\DotNetCore_Web_API_Jenkins_Azure.runtimeconfig.json
+E:\Bibliotecas\Documents\Documents\Filipe\Demos\DotNetCore_Web_API_Jenkins_Azure\bin\Release\netcoreapp2.2\DotNetCore_Web_API_Jenkins_Azure.runtimeconfig.dev.json
+E:\Bibliotecas\Documents\Documents\Filipe\Demos\DotNetCore_Web_API_Jenkins_Azure\bin\Release\netcoreapp2.2\DotNetCore_Web_API_Jenkins_Azure.dll
+E:\Bibliotecas\Documents\Documents\Filipe\Demos\DotNetCore_Web_API_Jenkins_Azure\bin\Release\netcoreapp2.2\DotNetCore_Web_API_Jenkins_Azure.pdb
+E:\Bibliotecas\Documents\Documents\Filipe\Demos\DotNetCore_Web_API_Jenkins_Azure\obj\Release\netcoreapp2.2\DotNetCore_Web_API_Jenkins_Azure.csprojAssemblyReference.cache
+E:\Bibliotecas\Documents\Documents\Filipe\Demos\DotNetCore_Web_API_Jenkins_Azure\obj\Release\netcoreapp2.2\DotNetCore_Web_API_Jenkins_Azure.csproj.CoreCompileInputs.cache
+E:\Bibliotecas\Documents\Documents\Filipe\Demos\DotNetCore_Web_API_Jenkins_Azure\obj\Release\netcoreapp2.2\DotNetCore_Web_API_Jenkins_Azure.RazorAssemblyInfo.cache
+E:\Bibliotecas\Documents\Documents\Filipe\Demos\DotNetCore_Web_API_Jenkins_Azure\obj\Release\netcoreapp2.2\DotNetCore_Web_API_Jenkins_Azure.RazorAssemblyInfo.cs
+E:\Bibliotecas\Documents\Documents\Filipe\Demos\DotNetCore_Web_API_Jenkins_Azure\obj\Release\netcoreapp2.2\DotNetCore_Web_API_Jenkins_Azure.AssemblyInfoInputs.cache
+E:\Bibliotecas\Documents\Documents\Filipe\Demos\DotNetCore_Web_API_Jenkins_Azure\obj\Release\netcoreapp2.2\DotNetCore_Web_API_Jenkins_Azure.AssemblyInfo.cs
+E:\Bibliotecas\Documents\Documents\Filipe\Demos\DotNetCore_Web_API_Jenkins_Azure\obj\Release\netcoreapp2.2\DotNetCore_Web_API_Jenkins_Azure.RazorTargetAssemblyInfo.cache
+E:\Bibliotecas\Documents\Documents\Filipe\Demos\DotNetCore_Web_API_Jenkins_Azure\obj\Release\netcoreapp2.2\DotNetCore_Web_API_Jenkins_Azure.dll
+E:\Bibliotecas\Documents\Documents\Filipe\Demos\DotNetCore_Web_API_Jenkins_Azure\obj\Release\netcoreapp2.2\DotNetCore_Web_API_Jenkins_Azure.pdb
