@@ -39,7 +39,6 @@ pipeline {
 
 		stage('build docker') {
 			docker.image('microsoft/dotnet:aspnetcore-runtime').inside('') {
-				sh "cp bin/Release/netcoreapp2.2/publish/'"
 				dockerImage = docker.build('filipemot/app:' + dockerTag, 'build_temp')
 			}
 		}
