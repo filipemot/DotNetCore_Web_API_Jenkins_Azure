@@ -1,5 +1,4 @@
 node {
-    agent any
 
 		def dockerImage = "filipemot/app-${BUILD_TIMESTAMP}";
 		def pub = "bin/Release/netcoreapp2.2/publish/";
