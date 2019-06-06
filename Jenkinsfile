@@ -1,5 +1,12 @@
-node {
+#!/usr/bin/env groovy
 
+def buildTimestamp() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMddHHmmss')
+    return formattedDate
+}
+node {
+        def dockerTag = buildTimestamp()
 		def dockerImage = "filipemot/app-${BUILD_TIMESTAMP}";
 		def pub = "bin/Release/netcoreapp2.2/publish/";
 	
