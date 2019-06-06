@@ -47,7 +47,7 @@ node {
 
 		stage('build docker') {
 
-				docker.build('filipemot/jenkins_dotnet_core','.');
+			sh "sudo docker build -t filipemot/jenkins_dotnet_core ." ;
 		
 			
 		}
