@@ -4,6 +4,7 @@ pipeline {
 		dockerImage = "filipemot/app-${BUILD_TIMESTAMP}";
 		pub = "bin/Release/netcoreapp2.2/publish/";
 	}
+	
     stages {
 	  stage('DotNetApi') {
 		steps {
