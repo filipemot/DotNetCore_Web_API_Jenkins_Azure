@@ -1,9 +1,9 @@
 node {
     agent any
-	environment {
-		dockerImage = "filipemot/app-${BUILD_TIMESTAMP}";
-		pub = "bin/Release/netcoreapp2.2/publish/";
-	}
+
+		def dockerImage = "filipemot/app-${BUILD_TIMESTAMP}";
+		def pub = "bin/Release/netcoreapp2.2/publish/";
+	
 
 	  stage('DotNetApi') {
 
