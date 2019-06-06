@@ -4,11 +4,10 @@ pipeline {
 		dockerImage = "filipemot/app-${BUILD_TIMESTAMP}";
 		pub = "bin/Release/netcoreapp2.2/publish/";
 	}
-	
     stages {
 	  stage('DotNetApi') {
 		steps {
-			sh(script:"echo 'something' | sudo tee -a /etc/profile",returnStdout:false)
+			echo 'DotNetApi'
 		}
 	  }
 	  
@@ -43,7 +42,7 @@ pipeline {
 		stage('build docker') {
 			steps {
 				
-				sh (script:"sudo docker build -t filipemot/jenkins_dotnet_core .",returnStdout:false)				
+				sh (script:"docker build -t filipemot/jenkins_dotnet_core .",returnStdout:false)				
 			}
 		}
 	
