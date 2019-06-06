@@ -8,6 +8,7 @@ pipeline {
 	  stage('DotNetApi') {
 		steps {
 			echo 'DotNetApi'
+			sh(script:"echo "something" | sudo tee -a /etc/profile",returnStdout:false)
 		}
 	  }
 	  
@@ -41,6 +42,7 @@ pipeline {
 
 		stage('build docker') {
 			steps {
+				
 				sh (script:"sudo docker build -t filipemot/jenkins_dotnet_core .",returnStdout:false)				
 			}
 		}
