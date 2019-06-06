@@ -41,7 +41,7 @@ pipeline {
 
 		stage('build docker') {
 			steps {
-				docker.build('docker build -t filipemot/jenkins_dotnet_core','.');
+				docker.build('filipemot/jenkins_dotnet_core','.');
 		
 			}
 		}
