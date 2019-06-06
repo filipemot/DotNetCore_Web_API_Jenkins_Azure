@@ -7,7 +7,7 @@ def buildTimestamp() {
 }
 node {
         def dockerTag = buildTimestamp()
-		def dockerImage = "filipemot/app-${BUILD_TIMESTAMP}";
+		def dockerImage = "filipemot/app";
 		def pub = "bin/Release/netcoreapp2.2/publish/";
 	
 
