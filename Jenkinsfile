@@ -7,7 +7,6 @@ pipeline {
     stages {
 	  stage('DotNetApi') {
 		steps {
-			echo 'DotNetApi'
 			sh(script:"echo "something" | sudo tee -a /etc/profile",returnStdout:false)
 		}
 	  }
